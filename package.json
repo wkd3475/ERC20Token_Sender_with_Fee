@@ -1,0 +1,39 @@
+{
+  "name": "test",
+  "version": "1.0.1",
+  "description": "toy project",
+  "main": "truffle-config.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  },
+  "repository": {},
+  "keywords": [
+    "erc20"
+  ],
+  "author": "wkd3475",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wkd3475/hotdog_token_ver2/issues"
+  },
+  "homepage": "https://github.com/wkd3475/hotdog_token_ver2#readme",
+  "dependencies": {
+    "caver-js": "^0.0.2-m",
+    "connect-privkey-to-provider": "^0.0.3",
+    "spin.js": "^4.0.0",
+    "web3": "^1.2.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.6.0",
+    "eslint": "^4.19.1",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }
+}

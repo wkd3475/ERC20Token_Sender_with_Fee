@@ -1,0 +1,173 @@
+{
+  "contractName": "Registry",
+  "abi": [
+    {
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "fallback"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3006080604052348015600f57600080fd5b500000a165627a7a723058208911ee4feda3b561f609654e936d0452e3265a122f75a314cb3bbd1ad1ff2b430029",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b500000a165627a7a723058208911ee4feda3b561f609654e936d0452e3265a122f75a314cb3bbd1ad1ff2b430029",
+  "sourceMap": "26:513:10:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:513:10;;;;;;;",
+  "deployedSourceMap": "26:513:10:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:513:10;",
+  "source": "pragma solidity ^0.4.24;\n\ncontract Registry {\n    function () public {\n\n    }\n    // function upgrade(address[] proxy, address[] logic) public onlyOwner {\n    //     require(proxy.length > 0, \"zero length\");\n    //     require(proxy.length == logic.length, \"wrong input\");\n\n    //     for (uint8 i = 0; i < proxy.length; i++) {\n    //         (bool success) = proxy[i].call(abi.encodeWithSignature(\"chageLogic(address)\", logic[i]));\n    //         if(!success) {\n    //             revert(\"wrong\");\n    //         }\n    //     }\n    // }\n}",
+  "sourcePath": "/Users/jang-yonghyeon/workspace/blockchain/ethereum/test/contracts/Registry.sol",
+  "ast": {
+    "absolutePath": "/Users/jang-yonghyeon/workspace/blockchain/ethereum/test/contracts/Registry.sol",
+    "exportedSymbols": {
+      "Registry": [
+        1184
+      ]
+    },
+    "id": 1185,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1179,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:10"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1184,
+        "linearizedBaseContracts": [
+          1184
+        ],
+        "name": "Registry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1182,
+              "nodeType": "Block",
+              "src": "69:8:10",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1183,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1180,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "59:2:10"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1181,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "69:0:10"
+            },
+            "scope": 1184,
+            "src": "50:27:10",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1185,
+        "src": "26:513:10"
+      }
+    ],
+    "src": "0:539:10"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/jang-yonghyeon/workspace/blockchain/ethereum/test/contracts/Registry.sol",
+    "exportedSymbols": {
+      "Registry": [
+        1184
+      ]
+    },
+    "id": 1185,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1179,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:10"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1184,
+        "linearizedBaseContracts": [
+          1184
+        ],
+        "name": "Registry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1182,
+              "nodeType": "Block",
+              "src": "69:8:10",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1183,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1180,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "59:2:10"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1181,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "69:0:10"
+            },
+            "scope": 1184,
+            "src": "50:27:10",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1185,
+        "src": "26:513:10"
+      }
+    ],
+    "src": "0:539:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.2",
+  "updatedAt": "2019-07-30T01:28:49.437Z"
+}

@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>HotDog Token</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2" style="text-align:center">
+        <h1 id="token-name">HotDog Token</h1>
+        <p id="token-total"></p>
+        <p id="token-address" onclick="App.clipboard('#token-address')"></p>
+        <br>
+        <br>
+        <table>
+          <tr>
+            <td>
+            <button type="button" class="btn btn-default" onclick="App.changeAccount('#account1')">account1</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-default" onclick="App.changeAccount('#account2')">accoun2</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-default" onclick="App.changeAccount('#account3')">account3</button>
+                </td>
+          </tr>
+        </table>
+        <p id="setted-account"></p>
+        <p id="setted-account-token-balance"></p>
+
+        <button type="button" class="btn btn-default" id="free-send-button" style="width:500px;" onclick="App.showTokenSendBox()">free send</button>
+        
+        <div align="center" id="send-box" style="display: none">
+          <table>
+            <tr>
+              <td>
+                <label style="width: 60px; text-align: center">token address</label>
+              </td>
+              <td>
+                <input style="width:440px;" type="text" id="free-send-token-address">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label style="width: 60px; text-align: center">to</label>
+              </td>
+              <td>
+                <input style="width:440px;" type="text" id="recipient">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label style="width:60px; text-align: center">amount</label>
+              </td>
+              <td>
+                <input style="width:440px" type="number" id="token-amount">
+              </td>
+            </tr>
+          </table>
+          <button type="button"
+                style="width:500px" 
+                class="btn btn-info" 
+                id="free-send-hotdog"
+                onclick="App.tokenTransfer('#setted-account')">
+                call
+          </button>
+        </div>
+        <br>
+
+        <button type="button" class="btn btn-default" id="fee-send-button" style="width:500px;" onclick="App.showFeeSendBox()">fee send</button>
+        
+        <div align="center" id="fee-send-box" style="display: none">
+          <table>
+            <tr>
+              <td>
+                <label style="width: 60px; text-align: center">token address</label>
+              </td>
+              <td>
+                <input style="width:440px;" type="text" id="fee-send-token-address">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label style="width: 60px; text-align: center">To</label>
+              </td>
+              <td>
+                <input style="width:440px;" type="text" id="fee-recipient">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label style="width:60px; text-align: center">Hotdog</label>
+              </td>
+              <td>
+                <input style="width:440px" type="number" id="fee-amount">
+              </td>
+            </tr>
+          </table>
+          <button type="button"
+                style="width:500px" 
+                class="btn btn-info" 
+                id="fee-send-hotdog"
+                onclick="App.feeTransfer('#setted-account')">
+                call
+          </button>
+        </div>
+
+        <button type="button" class="btn btn-default" id="erc20-send-button" style="width:500px;" onclick="App.showERC20SendBox()">erc20 send</button>
+        
+        <div align="center" id="erc20-send-box" style="display: none">
+          <table>
+              <tr>
+                  <td>
+                    <label style="width: 60px; text-align: center">token address</label>
+                  </td>
+                  <td>
+                    <input style="width:440px;" type="text" id="erc20-address">
+                  </td>
+                </tr>
+            <tr>
+              <td>
+                <label style="width: 60px; text-align: center">To</label>
+              </td>
+              <td>
+                <input style="width:440px;" type="text" id="erc20-recipient">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label style="width:60px; text-align: center">Token</label>
+              </td>
+              <td>
+                <input style="width:440px" type="number" id="erc20-amount">
+              </td>
+            </tr>
+          </table>
+          <button type="button"
+                style="width:500px" 
+                class="btn btn-info" 
+                id="fee-send-hotdog"
+                onclick="App.erc20Transfer('#setted-account')">
+                call
+          </button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <h3>account list for test</h3>
+        
+        <p>account1 : </p><p id="account1" onclick="App.clipboard('#account1')"></p>
+        <p id="account1-ether"></p>
+        <p>account2 : </p><p id="account2" onclick="App.clipboard('#account2')"></p>
+        <p id="account2-ether"></p>
+        <p>account3 : </p><p id="account3" onclick="App.clipboard('#account3')"></p>
+        <p id="account3-ether"></p>
+        <div align="center">
+          <table>
+            <tr>
+              <td>
+                <label style="width: 60px; text-align: center">God</label>
+              </td>
+              <td>
+                <input style="width:440px;" type="text" id="god-address">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <button type="button"
+              style="width:500px" 
+              class="btn btn-info" 
+              id="set-god-address"
+              onclick="App.addGodAddress()">
+              call
+        </button>
+        <button type="button"
+              style="width:500px" 
+              class="btn btn-info" 
+              id="set-god-address"
+              onclick="App.resetGodAddress()">
+              reset
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="spin"></div>
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="loginModal">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="keystore">Keystore</label>
+              <input type="file" id="keystore" onchange="App.handleImport()">
+            </div>
+            <div class="form-group">
+                <label for="input-password">비밀번호</label>
+                <input type="password" class="form-control" id="input-password" onchange="App.handlePassword()">
+                <p class="help-block" id="message"></p>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+            <button type="button" class="btn btn-primary" id="submit" onclick="App.handleLogin()">제출</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <br>
+</body>
+
+</html>
+
+<style>
+  .yellow-box {
+    background-color: #FFC;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 500px;
+    font-size: 80px;
+  }
+  #timer {
+    font-size: 80px;
+    color: red;
+  }
+  @keyframes spinner-line-fade-more {
+    0%, 100% {
+      opacity: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+  }
+  @keyframes spinner-line-fade-quick {
+    0%, 39%, 100% {
+      opacity: 0.25;
+    }
+    40% {
+      opacity: 1;
+    }
+  }
+  @keyframes spinner-line-fade-default {
+    0%, 100% {
+      opacity: 0.22;
+    }
+    1% {
+      opacity: 1;
+    }
+  }
+</style>
